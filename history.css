@@ -1,0 +1,110 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.glowing-cards {
+  min-height: 100vh;
+  background: 
+  url(https://i.pinimg.com/564x/f4/39/4b/f4394b2b7ac86cf297262a02ee062e6e.jpg)
+    no-repeat center;
+    background-size: cover;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    overflow: hidden;
+    position: relative;
+}
+
+.glowing-cards::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.glowing-cards .card {
+  position: relative;
+  width: 22em;
+  height: 23em;
+  color: #fff;
+  border-radius: 13px;
+  background: radial-gradient(
+    1000px circle at 0 0,
+    rgba(0, 94, 255, 0),
+    transparent 0%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 100ms;
+}
+
+.glowing-cards .card-content {
+  background-color: rgba(29, 29, 35, 0.7);
+  border-radius: inherit;
+  padding: .5em;
+  height: calc(100% - 4px);
+  width: calc(100% - 4px);
+  z-index: 0;
+}
+
+.glowing-cards .card h2 {
+  margin: 1em 0 0.5em 0;
+}
+
+.glowing-cards .card {
+ line-height: 30px;
+}
+
+.glowing-cards:hover .card {
+  background: radial-gradient(
+    1500px circle at var(--x) var(--y),
+    rgba(0, 162, 255, 0.9),
+    transparent 15%
+  );
+}
+
+.glowing-cards .card i {
+  font-size: 3em;
+}
+
+.glowing-cards .card-content * {
+  opacity: 0.5;
+  transition: 300ms ease-in-out;
+}
+
+.glowing-cards .card:hover .card-content * {
+  opacity: 1;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    1500px circle at var(--x) var(--y),
+    rgba(0, 153, 255, 0.623),
+    transparent 35%
+  );
+  opacity: 0;
+}
+
+.cards .card:hover::before {
+  opacity: 1;
+}
